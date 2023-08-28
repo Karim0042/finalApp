@@ -1,7 +1,10 @@
 package az.iktlab;
 
+import az.iktlab.controller.MenuController;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        MenuController menuController  = new MenuController();
+        menuController.selectMenu();
     }
 }
