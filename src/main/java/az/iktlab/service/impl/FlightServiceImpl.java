@@ -2,6 +2,7 @@ package az.iktlab.service.impl;
 
 import az.iktlab.dao.FlightRepository;
 import az.iktlab.dao.impl.FlightDaoImpl;
+import az.iktlab.dto.FlightDto;
 import az.iktlab.model.Flight;
 import az.iktlab.service.FlightService;
 
@@ -21,7 +22,14 @@ public class FlightServiceImpl implements FlightService {
     }
 
     @Override
-    public List<Flight> getAllFlightsByDestinationAndTimeAndCount() {
-        return null;
+    public List<Flight> getAllFlightsByDestinationAndTimeAndCount(FlightDto flightDto) {
+        return flightRepository.getAllFlightsByDestinationAndTimeAndCount(flightDto);
     }
+
+    @Override
+    public void insertFlight(Flight flight) {
+        flightRepository.insertFlight(flight);
+    }
+
+
 }
