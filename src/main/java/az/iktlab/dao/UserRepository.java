@@ -5,4 +5,5 @@ import az.iktlab.model.User;
 public interface UserRepository  {
     int insertUser(User user);
     User getByNameAndSurname(String name,String surname);
+    boolean loginUser(String username,String password);
 }

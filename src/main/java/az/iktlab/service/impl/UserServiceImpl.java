@@ -16,4 +16,9 @@ public class UserServiceImpl implements UserService {
     public User getByNameAndSurname(String name, String surname) {
         return userRepository.getByNameAndSurname(name,surname);
     }
+
+    @Override
+    public boolean loginUser(String username, String password) {
+        return false;
+    }
 }

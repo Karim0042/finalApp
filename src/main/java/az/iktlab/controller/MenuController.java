@@ -1,6 +1,8 @@
 package az.iktlab.controller;
 
 import az.iktlab.constants.Menu;
+import az.iktlab.dao.UserRepository;
+import az.iktlab.dao.impl.UserDaoImpl;
 import az.iktlab.dto.FlightDto;
 import az.iktlab.model.Flight;
 import az.iktlab.model.User;
@@ -15,9 +17,10 @@ public class MenuController {
     private final FlightController flightRepository = new FlightController();
     private final UserController userRepository = new UserController();
     private final BookController bookRepository = new BookController();
+    private final UserRepository userRepo = new UserDaoImpl();
     public  void selectMenu(){
-
-        boolean ff=true;
+            User u = ScannerUtil.getUser();
+        boolean ff=userRepo.loginUser(u.getName(),u.getSurname());
         while (ff){
             showMenu();
             var index = getMenu();

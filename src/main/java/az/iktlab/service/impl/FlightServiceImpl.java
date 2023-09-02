@@ -15,21 +15,16 @@ public class FlightServiceImpl implements FlightService {
     public List<Flight> getAllFlightsFromKiev() {
         return flightRepository.getAllFlightsFromKiev();
     }
-
     @Override
     public Flight getFlightById(Integer id) {
         return flightRepository.getFlightById(id);
     }
-
     @Override
     public List<Flight> getAllFlightsByDestinationAndTimeAndCount(FlightDto flightDto) {
         return flightRepository.getAllFlightsByDestinationAndTimeAndCount(flightDto);
     }
-
     @Override
     public void insertFlight(Flight flight) {
         flightRepository.insertFlight(flight);
     }
-
-
 }
